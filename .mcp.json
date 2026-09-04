@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "vertixs": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/plugin-mcp.js"],
+      "env": {
+        "VERTIXS_BLUEPRINT_DIR": "${CLAUDE_PROJECT_DIR}/.vertixs",
+        "VERTIXS_LOG_STDERR": "1",
+        "LOG_LEVEL": "warn"
+      }
+    }
+  }
+}
