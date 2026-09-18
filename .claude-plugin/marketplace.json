@@ -10,7 +10,7 @@
     {
       "name": "vertixs-blueprint",
       "description": "用對話建出一套流程管理系統的藍圖,產出可部署的 PostgreSQL schema。全程在本機,不需要帳號或連線。",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "Development",
       "keywords": [
         "erp",

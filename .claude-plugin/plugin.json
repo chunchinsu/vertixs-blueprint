@@ -1,6 +1,6 @@
 {
   "name": "vertixs-blueprint",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "用對話建出一套流程管理系統的藍圖 —— 定義物件、欄位、生命週期、簽核,產出可部署的 PostgreSQL schema。全程在本機;也可一鍵推上 Vertixs 雲端直接跑起來(選用)。",
   "author": {
     "name": "Vertixs"

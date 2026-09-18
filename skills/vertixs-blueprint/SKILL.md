@@ -156,3 +156,16 @@ generate_schema     → 產出 CREATE TABLE
 
 同樣地,`validate_model` 回報的缺口要如實轉達,不要因為「看起來還能跑」就跳過。
 它報的是領域缺口 —— 少了那些,系統跑得動但帳對不起來。
+
+
+## 流程指南與缺口檢查（v1.2.0）
+先用 `list_process_guides`（可選 industry: manufacturing/distribution/retail）確認適用範圍。
+指南依責任分工、控制點、例外處理與量測原則提供 Vertixs 建模建議。
+套既有模組後呼叫 `assess_process_coverage`，guideId 選 procurement/manufacturing/fulfillment。
+scope 是步驟 id 清單；bindings 對應公司不同命名；excluded 必須附外部處理或不適用原因。
+不因缺少同名欄位就自動新增。一次最多追問三個問題，使用者確認範圍後才提出 proposed 修改。
+fieldBindings 對應每個步驟的建議欄位與企業既有欄位；保存及後續檢查須一起帶入。
+檢查包含問題及驗收情境；schema_signal_only 只代表結構線索存在，不代表流程可執行。
+最後仍需 validate_model、使用者確認、generate_schema。不得捏造產業標竿數字。
+
+使用者確認要保存檢查範圍時，用 `save_process_scope`；先從 get_model.processScopes 取得 expectedRevision（首次 0），confirmed:true 僅代表使用者這次明確同意保存。保存不等於確認或發布任何實體。後續讀取相同指南範圍帶入 assess_process_coverage。
